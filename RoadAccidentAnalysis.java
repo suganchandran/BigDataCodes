@@ -36,7 +36,7 @@ public class RoadAccidentAnalysis {
 
         // Accidents on a specific date, grouped by cities
         spark.sql("SELECT City, DATE(Start_Time) AS Specific_Date,\n" +
-                " COUNT(*) AS Accident_Count\n" +
+                "COUNT(*) AS Accident_Count\n" +
                 "FROM accidents\n" +
                 "WHERE DATE(Start_Time) = '2022-12-23'\n" +
                 "GROUP BY City, DATE(Start_Time)\n" +
@@ -45,7 +45,7 @@ public class RoadAccidentAnalysis {
 
         // Accidents count during day/night
         spark.sql("SELECT Sunrise_Sunset AS Day_Night\n," +
-                " COUNT(*) AS Accidents_Count\n" +
+                "COUNT(*) AS Accidents_Count\n" +
                 "FROM accidents\n" +
                 "GROUP BY Sunrise_Sunset").show();
 
