@@ -13,7 +13,7 @@ public class RoadAccidentAnalysis {
         Dataset<Row> df = spark.read()
                 .option("header", "true")
                 .option("inferSchema", "true")
-                .csv("hdfs://192.168.0.128:19000/project3/sugan/US_Accidents_March23.csv");
+                .csv("hdfs://192.168.0.128:19000/project3/sugan/US_Accidents_2016-19.csv");
 
         df.printSchema();
         df.show(5, false);
